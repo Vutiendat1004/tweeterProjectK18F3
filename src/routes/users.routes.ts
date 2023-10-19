@@ -1,0 +1,12 @@
+//khai báo
+import { Router } from 'express'
+import { register } from 'module'
+import { loginController, registerController } from '~/controllers/users.controllers'
+import { loginValidator, registerValidator } from '~/middlewares/users.middlewares'
+
+const usersRouter = Router()
+
+//router
+usersRouter.get('/login', loginValidator, loginController)
+usersRouter.post('/register', registerValidator, registerController)
+export default usersRouter
